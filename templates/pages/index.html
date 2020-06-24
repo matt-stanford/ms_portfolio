@@ -58,19 +58,25 @@
                     <h2>Portfolio</h2>
                 </div>
                 <div class="row">
-                    {% if jobs %}
-                        {% for job in jobs %}
-                            <div class="card">
-                                <img src="{{ job.image.url }}" alt="">
-                                <div class="info">
-                                    <h3>{{ job.title }}</h3>
-                                    <p>{{ job.summary }}</p>
-                                    <a href="#" class="btn"><span>Read More</span></a>
-                                </div>
+                    {% for job in jobs %}
+                        <div class="card">
+                            <img src="{{ job.image.url }}" alt="">
+                            <div class="info">
+                                <h3>{{ job.title }}</h3>
+                                <p>{{ job.summary }}</p>
+                                <button id="modalBtn" class="btn" data-jobId="{{ job.id }}"><span>Read More</span></button>
                             </div>
-                        {% endfor %}
-                    {% endif %}
-    
+                        </div>
+
+                        <div id="jobModal{{ job.id}}" class="modal">
+                            <div class="modal-content">
+                                <span class="closeBtn" data-jobId="{{ job.id }}">&times;</span>
+                                <p>{{ job.summary }}</p>
+                                <p>{{ job.technology }}</p>
+                                <a href="{{ job.github_url }}" target="_blank" class="btn"><span>Github</span></a>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </section>
@@ -130,5 +136,6 @@
     </div>
     
     <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="{% static 'js/app.js' %}"></script>
 </body>
 </html>

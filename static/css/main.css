@@ -131,6 +131,38 @@ h2 {
     transform: translateY(0px);
 }
 
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 21;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: var(--overlay-color);
+}
+
+.modal-content {
+    background: #f8f8f8;
+    margin: 20% auto;
+    padding: 20px;
+    width: 70%;
+    box-shadow: 0px 7px 10px rgba(0,0,0,0.5);
+}
+
+.closeBtn {
+    color: #ccc;
+    float: right;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.closeBtn:hover, .closeBtn:focus {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
 /* SHOWCASE */
 
 .showcase {
@@ -418,7 +450,7 @@ h2 {
 }
 
 .section-title {
-    padding: 7.5rem 0;
+    padding: 5rem 0;
     text-align: center;
 }
 
