@@ -20,6 +20,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.4;
+    height: 100vh;
 }
 
 h2 {
@@ -173,7 +174,9 @@ h2 {
 /* BUTTONS */
 
 .button-container {
-    position: relative
+    position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 .btn {
@@ -205,7 +208,7 @@ h2 {
   left: 0;
   top: 0;
   height: 490%;
-  width: 140%;
+  width: 150%;
   background: var(--primary-color);
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
@@ -222,24 +225,13 @@ h2 {
     background-image: linear-gradient(45deg, var(--primary-color), #ef1b55);
 } */
 
-.btn-outline {
-    display: inline-block;
-    width: 100%;
-    border: 3px solid var(--secondary-color);
-    background-color: transparent;
-    color: var(--secondary-color);
-    font-size: 16px;
-    font-weight: 700;
-    padding: 0.75rem 1.5rem;
-    margin-top: 1rem;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.5s;
+.submit-btn-span {
+    position: relative;
+    z-index: 1;
 }
 
-.btn-outline:hover {
-    background: var(--secondary-color);
-    color: #fff;
+.form-group .btn {
+    cursor: pointer;
 }
 
 /* *** MENU *** */
@@ -434,8 +426,9 @@ h2 {
     color: var(--dark-grey);
 }
 
-.portfolio-content {
+.portfolio {
     background-image: linear-gradient(45deg, var(--tertiary-color), #f77f29);
+    min-height: 100vh;
 }
 
 .about {
