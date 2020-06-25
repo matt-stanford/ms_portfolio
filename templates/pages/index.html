@@ -20,18 +20,18 @@
                     <div>
                         <div class="pages-menu">
                             <ul>
-                                <li><a href="#home">Home</a></li>
-                                <li><a href="#portfolio">Portfolio</a></li>
-                                <li><a href="#about">About</a></li>
-                                <li><a href="#contact">Contact</a></li>
+                                <li><a id="menuBtn" href="#home">Home</a></li>
+                                <li><a id="menuBtn" href="#portfolio">Portfolio</a></li>
+                                <li><a id="menuBtn" href="#about">About</a></li>
+                                <li><a id="menuBtn" href="#contact">Contact</a></li>
                             </ul>
                         </div>
                         
                         <div class="social-menu">
                             <ul class="social-list">
-                                <li><a href="https://www.linkedin.com/in/matt-stanford/"><i class="fab fa-linkedin-in"></i></a></li>
-                                <li><a href="https://github.com/matt-stanford"><i class="fab fa-github"></i></a></li>
-                                <li><a href="mailto:mjfstanford@gmail.com"><i class="far fa-envelope"></i></a></li>
+                                <li><a id="menuBtn" href="https://www.linkedin.com/in/matt-stanford/"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a id="menuBtn" href="https://github.com/matt-stanford"><i class="fab fa-github"></i></a></li>
+                                <li><a id="menuBtn" href="mailto:mjfstanford@gmail.com"><i class="far fa-envelope"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -68,14 +68,28 @@
                             </div>
                         </div>
 
+                        <!-- modal -->
                         <div id="jobModal{{ job.id}}" class="modal">
                             <div class="modal-content">
+                                <div class="modal-image">
+                                    <img src="{{ job.image.url }}" alt="">
+                                </div>
+                                <div class="modal-info">
+                                    <div class="project-details">
+                                        <h3>Project Details</h3>
+                                        <p><strong>Technologies: </strong>{{ job.technology }}</p>
+                                        <p><strong>Source code: </strong><a href="{{ job.github_url }}" target="_blank" rel="noopener noreferrer">www.github.com</a></p>
+                                    </div>
+                                    <div class="project-description">
+                                        <h3>Project Description</h3>
+                                        <p>{{ job.summary }}</p>
+                                    </div>
+                                </div>
                                 <span class="closeBtn" data-jobId="{{ job.id }}">&times;</span>
-                                <p>{{ job.summary }}</p>
-                                <p>{{ job.technology }}</p>
-                                <a href="{{ job.github_url }}" target="_blank" class="btn"><span>Github</span></a>
+                                
                             </div>
                         </div>
+
                     {% endfor %}
                 </div>
             </div>

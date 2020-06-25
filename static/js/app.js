@@ -5,13 +5,13 @@ const scroll = new SmoothScroll('a[href*="#"]', {
 const modals = document.querySelectorAll('.modal');
 const modalBtns = document.querySelectorAll('#modalBtn');
 const closeBtns = document.querySelectorAll('.closeBtn');
+let menuBtns = document.querySelectorAll('#menuBtn');
+const toggler = document.querySelector('.toggler');
 
 modalBtns.forEach(btn => {
     btn.addEventListener('click', function() {
         let jobId = this.dataset.jobid
-        console.log(jobId)
         let modal = document.getElementById('jobModal' + jobId);
-        console.log(modal)
         modal.style.display = 'block'
     });
 });
@@ -19,9 +19,7 @@ modalBtns.forEach(btn => {
 closeBtns.forEach(btn => {
     btn.addEventListener('click', function() {
         let jobId = this.dataset.jobid
-        console.log(jobId)
         let modal = document.getElementById('jobModal' + jobId);
-        console.log(modal)
         modal.style.display = 'none'
     });
 });
@@ -30,6 +28,17 @@ modals.forEach(modal => {
     window.addEventListener('click', function(e) {
         if(e.target == modal) {
             modal.style.display = 'none'
+        }
+    });
+});
+
+menuBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+        console.log('clicked')
+        if (toggler.checked == true) {
+            toggler.checked = false;
+        } else {
+            toggler.checked = true;
         }
     });
 });
