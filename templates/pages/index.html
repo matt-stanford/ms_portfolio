@@ -29,9 +29,9 @@
                         
                         <div class="social-menu">
                             <ul class="social-list">
-                                <li><a id="menuBtn" href="https://www.linkedin.com/in/matt-stanford/"><i class="fab fa-linkedin-in"></i></a></li>
-                                <li><a id="menuBtn" href="https://github.com/matt-stanford"><i class="fab fa-github"></i></a></li>
-                                <li><a id="menuBtn" href="mailto:mjfstanford@gmail.com"><i class="far fa-envelope"></i></a></li>
+                                <li><a id="menuBtn" href="https://www.linkedin.com/in/matt-stanford/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a id="menuBtn" href="https://github.com/matt-stanford" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a></li>
+                                <li><a id="menuBtn" href="mailto:mjfstanford@gmail.com" target="_blank" rel="noopener noreferrer"><i class="far fa-envelope"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -102,7 +102,29 @@
                     <h2>About Me</h2>
                 </div>
                 <div class="row">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta autem culpa fuga officiis quo nesciunt aspernatur, totam accusamus repellendus odio explicabo laboriosam minus quod. Voluptatibus itaque tempora ratione. Quis blanditiis et ratione iusto assumenda deleniti error consequatur dolorem, est aperiam, quasi ut iste sequi! Cum ducimus ipsum ea nemo explicabo mollitia molestias quibusdam suscipit quae voluptatum ex quia aliquid earum harum nisi, laborum provident hic incidunt officia blanditiis voluptatibus, atque, velit id facere. Vitae minus error repudiandae sapiente non, ad neque corrupti ab laboriosam sint recusandae consequuntur commodi fuga quidem natus dolor nesciunt ratione mollitia cum repellat similique. Modi, error!</p>
+                    <p>I am an Oxford based full stack developer that will work closely with you to build your idea into a high quality working product.</p>
+                    <p>To arrange a free quote for your project, please <a href="#contact">get in touch</a>.</p>
+                    <h3>Areas of expertise</h3>
+                    <div class="service-feature">
+                        <div class="service-image">
+                            <img src="{% static 'img/python-icon.png' %}" alt="">
+                        </div>
+                        <div class="service-image">
+                            <img src="{% static 'img/django-icon.png' %}" alt="">
+                        </div>
+                        <div class="service-image">
+                            <img src="{% static 'img/postgresql-icon.png' %}" alt="">
+                        </div>
+                        <div class="service-image">
+                            <img src="{% static 'img/html-icon.png' %}" alt="">
+                        </div>
+                        <div class="service-image">
+                            <img src="{% static 'img/css-icon.png' %}" alt="">
+                        </div>
+                        <div class="service-image">
+                            <img src="{% static 'img/javascript-icon.png' %}" alt="">
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -115,7 +137,7 @@
                 </div>
                 <div class="row">
                     <div class="form-wrapper">
-                        <form action="" method="post">
+                        <form action="{% url 'contact' %}" method="post">
                             {% csrf_token %}
                             <label class="form-group">
                                 <input type="text" name="name" class="form-control" required>

@@ -31,7 +31,7 @@ h2 {
     color: #fff;
 }
 
-@media (min-width: 767px) {
+@media  only screen and (min-width: 767px) {
     .container {
         max-width: 740px;
     }
@@ -524,19 +524,79 @@ h2 {
     min-height: 100vh;
 }
 
+/* ABOUT */
+
 .about {
     background: #f8f8f8;
 }
+
+.about .row {
+    flex-direction: column;
+}
+
+.about p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.about p:nth-child(2) {
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.about h3 {
+    font-family: Oswald, sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding-bottom: 20px;
+    color:  var(--dark-grey);
+}
+
+.about a, .about a:visited {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.about a:hover, .about a:active {
+    color: var(--primary-color);
+}
+
+.service-feature {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 5rem;
+}
+
+.service-image {
+    width: 100px;
+    margin: 25px 10px;
+    position: relative;
+}
+
+.service-image img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* CONTACT */
 
 .contact {
     background-image: linear-gradient(45deg, var(--secondary-color), #247ad4);
 }
 
 .form-wrapper {
-    max-width: 758px;
+    max-width: 95%;
     width: 540px;
     margin: auto;
-    padding: 5rem;
+    padding: 5%;
     box-shadow: 0px 7px 10px rgba(0,0,0,0.5);
     background: #fff;
 }
