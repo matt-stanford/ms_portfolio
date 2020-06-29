@@ -8,12 +8,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'v9-cc&q--ek(1a#b-dy*b$g&8k_zla_86%z!#)zu+vy%ey30#^'
+# SECRET_KEY = 'v9-cc&q--ek(1a#b-dy*b$g&8k_zla_86%z!#)zu+vy%ey30#^'
+SECRET_KEY = os.environ.get('MS_PORTFOLIO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'mattstanforddev.herokuapp.com',
+    'localhost'
+]
 
 
 # Application definition
@@ -25,6 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
 
     # local apps
     'pages.apps.PagesConfig',
@@ -125,3 +130,12 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'btrealestate79@gmail.com'
 EMAIL_HOST_PASSWORD = 'xhlfnfceanicgkmo'
 EMAIL_USE_TLS = True
+
+# AWS https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+

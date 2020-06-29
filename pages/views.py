@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from .models import Job
+import os
 
 def index(request):
     jobs = Job.objects.all()
