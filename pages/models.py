@@ -10,6 +10,10 @@ class Job(models.Model):
     github_url = models.URLField(blank=True)
     upload_date = models.DateTimeField(default=datetime.now)
 
+    @property
+    def short_summary(self):
+        return f'{self.summary[:100]}...'
+
     def __str__(self):
         return self.title
 
