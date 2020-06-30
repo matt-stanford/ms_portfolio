@@ -31,16 +31,15 @@ h2 {
     color: #fff;
 }
 
-@media  only screen and (min-width: 767px) {
+@media (max-width: 766px) {
+    .container {
+        padding: 0 1rem;
+    }
+}
+@media only screen and (min-width: 767px) {
     .container {
         max-width: 740px;
-    }
-
-    .row {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 10rem;
+        padding: 0 3rem;
     }
 }
 
@@ -48,26 +47,40 @@ h2 {
 @media (min-width: 1024px) {
     .container {
         max-width: 1020px;
+        padding: 0 3rem;
     }
 }
 
 @media (min-width: 1250px) {
     .container {
         max-width: 1240px;
+        padding: 0 3rem;
     }
 }
 
 .container {
     margin: auto;
     overflow: hidden;
-    padding: 0 3rem;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10rem;
+}
+
+.card_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .card {
     width: 280px;
     height: 360px;
     padding: 2rem 1rem;
-    margin: 25px 10px;
+    margin: 10px;
     background: #fff;
     position: relative;
     display: flex;
@@ -254,9 +267,11 @@ h2 {
 
 .showcase h1 {
     font-family: Oswald, sans-serif;
-    font-size: 6rem;
+    font-size: 5rem;
+    line-height: 1.1;
     font-weight: 400;
     text-transform: uppercase;
+    margin-bottom: 15px;
 }
 
 .showcase p {
@@ -511,7 +526,7 @@ h2 {
 }
 
 .section-title {
-    padding: 5rem 0;
+    padding: 5rem 0 2.5rem 0;
     text-align: center;
 }
 
@@ -537,12 +552,13 @@ h2 {
 .about p {
     font-size: 20px;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .about p:nth-child(2) {
     padding-bottom: 30px;
     margin-bottom: 30px;
-    border-bottom: 1px solid var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
 }
 
 .about h3 {
@@ -590,6 +606,7 @@ h2 {
 
 .contact {
     background-image: linear-gradient(45deg, var(--secondary-color), #247ad4);
+    min-height: 100vh;
 }
 
 .form-wrapper {

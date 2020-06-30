@@ -59,40 +59,43 @@
                     <h2>Portfolio</h2>
                 </div>
                 <div class="row">
-                    {% for job in jobs %}
-                        <div class="card">
-                            <img src="{{ job.image.url }}" alt="">
-                            <div class="info">
-                                <h3>{{ job.title }}</h3>
-                                <p>{{ job.short_summary }}</p>
-                                <button id="modalBtn" class="btn" data-jobId="{{ job.id }}"><span>Read More</span></button>
-                            </div>
-                        </div>
-
-                        <!-- modal -->
-                        <div id="jobModal{{ job.id}}" class="modal">
-                            <div class="modal-content">
-                                <div class="modal-image">
-                                    <img src="{{ job.image.url }}" alt="">
+                    <div class="card_wrapper">
+                        {% for job in jobs %}
+                            <div class="card">
+                                <img src="{{ job.image.url }}" alt="">
+                                <div class="info">
+                                    <h3>{{ job.title }}</h3>
+                                    <p>{{ job.short_summary }}</p>
+                                    <button id="modalBtn" class="btn" data-jobId="{{ job.id }}"><span>Read More</span></button>
                                 </div>
-                                <div class="modal-info">
-                                    <div class="project-details">
-                                        <h3>Project Details</h3>
-                                        <p><strong>Technologies: </strong>{{ job.technology }}</p>
-                                        <p><strong>View project: </strong>{% if job.url %}<a href="{{ job.url }}" target="_blank" rel="noopener noreferrer">{{ job.url }}</a>{% else %}n/a{% endif %}</p>
-                                        <p><strong>Source code: </strong><a href="{{ job.github_url }}" target="_blank" rel="noopener noreferrer">www.github.com</a></p>
-                                    </div>
-                                    <div class="project-description">
-                                        <h3>Project Description</h3>
-                                        <p>{{ job.summary }}</p>
-                                    </div>
-                                </div>
-                                <span class="closeBtn" data-jobId="{{ job.id }}">&times;</span>
-                                
                             </div>
-                        </div>
 
-                    {% endfor %}
+                            <!-- modal -->
+                            <div id="jobModal{{ job.id}}" class="modal">
+                                <div class="modal-content">
+                                    <div class="modal-image">
+                                        <img src="{{ job.image.url }}" alt="">
+                                    </div>
+                                    <div class="modal-info">
+                                        <div class="project-details">
+                                            <h3>Project Details</h3>
+                                            <p><strong>Technologies: </strong>{{ job.technology }}</p>
+                                            <p><strong>View project: </strong>{% if job.url %}<a href="{{ job.url }}" target="_blank" rel="noopener noreferrer">{{ job.url }}</a>{% else %}n/a{% endif %}</p>
+                                            <p><strong>Source code: </strong><a href="{{ job.github_url }}" target="_blank" rel="noopener noreferrer">www.github.com</a></p>
+                                        </div>
+                                        <div class="project-description">
+                                            <h3>Project Description</h3>
+                                            <p>{{ job.summary }}</p>
+                                        </div>
+                                    </div>
+                                    <span class="closeBtn" data-jobId="{{ job.id }}">&times;</span>
+                                    
+                                </div>
+                            </div>
+
+                        {% endfor %}
+                    </div>
+                    
                 </div>
             </div>
         </section>
