@@ -44,6 +44,14 @@
         
         <section class="showcase" id="home">
             <div class="container showcase-inner">
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="message-alert">
+                            <p>{{ message }}</p>
+                            <span class="alert-closeBtn">&times;</span>
+                        </div>
+                    {% endfor %}
+                {% endif %}
                 <h1>Matt Stanford</h1>
                 <p>Python | Django Full-Stack Developer.</p>
                 <div class="button-container">
@@ -89,7 +97,6 @@
                                         </div>
                                     </div>
                                     <span class="closeBtn" data-jobId="{{ job.id }}">&times;</span>
-                                    
                                 </div>
                             </div>
 

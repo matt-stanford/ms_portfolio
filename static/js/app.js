@@ -7,6 +7,8 @@ const modalBtns = document.querySelectorAll('#modalBtn');
 const closeBtns = document.querySelectorAll('.closeBtn');
 let menuBtns = document.querySelectorAll('#menuBtn');
 const toggler = document.querySelector('.toggler');
+const alertCloseBtn = document.querySelector('.alert-closeBtn');
+const messageAlert = document.querySelector('.message-alert');
 
 modalBtns.forEach(btn => {
     btn.addEventListener('click', function() {
@@ -41,5 +43,9 @@ menuBtns.forEach(btn => {
             toggler.checked = true;
         }
     });
+});
+
+alertCloseBtn.addEventListener('click', function() {
+    messageAlert.style.display = 'none';
 });
 

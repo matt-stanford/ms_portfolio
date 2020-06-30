@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from django.core.mail import send_mail
 from .models import Job
 import os
@@ -19,6 +20,6 @@ def contact(request):
             email,
             ['mjfstanford@gmail.com',]
         )
-
+        messages.success(request, f'Thanks for your message, {name}. I\'ll be in touch soon!')
         return redirect('index')
     return render(request, 'index.html', {})
