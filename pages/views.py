@@ -5,7 +5,7 @@ from .models import Job
 import os
 
 def index(request):
-    jobs = Job.objects.all()
+    jobs = Job.objects.all().order_by('-upload_date')
     return render(request, 'pages/index.html', {'jobs': jobs})
 
 def contact(request):
