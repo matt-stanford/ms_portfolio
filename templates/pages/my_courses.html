@@ -19,7 +19,7 @@
                             <div class="info">
                                 <h3>{{ course.title }}</h3>
                                 <p>{{ course.short_summary | safe  }}</p>
-                                <button id="modalBtn" class="btn" data-jobId="{{ course.id }}"><span>Read More</span></button>
+                                <button id="modalBtn" class="btn btn-primary" data-jobId="{{ course.id }}"><span>Read More</span></button>
                             </div>
                         </div>
 
@@ -33,7 +33,7 @@
                                     <div class="project-description">
                                         <h3>Course Description</h3>
                                         <p>{{ course.summary | safe }}</p>
-                                        <a href="{{ course.url }}" target="_blank" rel="noopener noreferrer" class="btn"><span class="white-text">View Course</span></a>
+                                        <a href="{{ course.url }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><span class="white-text">View Course</span></a>
                                     </div>
                                 </div>
                                 <span class="closeBtn" data-jobId="{{ course.id }}">&times;</span>

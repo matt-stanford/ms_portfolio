@@ -6,10 +6,11 @@
             <div>
                 <div class="pages-menu">
                     <ul>
-                        <li><a id="menuBtn" href="#home">Home</a></li>
-                        <li><a id="menuBtn" href="#portfolio">Portfolio</a></li>
-                        <li><a id="menuBtn" href="#about">About</a></li>
-                        <li><a id="menuBtn" href="#contact">Contact</a></li>
+                        <li><a id="menuBtn" href="{% if 'courses' in request.path %}{% url 'index' %}{% endif %}#home">Home</a></li>
+                        <li><a id="menuBtn" href="{% url 'my_courses' %}">My Courses</a></li>
+                        <li><a id="menuBtn" href="{% if 'courses' in request.path %}{% url 'index' %}{% endif %}#portfolio">Portfolio</a></li>
+                        <li><a id="menuBtn" href="{% if 'courses' in request.path %}{% url 'index' %}{% endif %}#about">About</a></li>
+                        <li><a id="menuBtn" href="{% if 'courses' in request.path %}{% url 'index' %}{% endif %}#contact">Contact</a></li>
                     </ul>
                 </div>
                 

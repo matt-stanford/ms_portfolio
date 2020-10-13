@@ -19,7 +19,8 @@
                 <h1>Matt Stanford</h1>
                 <p>Python | Django Full-Stack Developer.</p>
                 <div class="button-container">
-                    <a href="#portfolio" class="btn"><span>Portfolio</span></a>
+                    <a href="#portfolio" class="btn btn-primary"><span>Portfolio</span></a>
+                    <a href="{% url 'my_courses' %}" class="btn btn-outline"><span>My Courses</span></a>
                 </div>
             </div>
         </section>
@@ -41,7 +42,7 @@
                                         <p>{{ job.short_summary }}</p>
                                     </div>
                                     <div>
-                                        <button id="modalBtn" class="btn" data-jobId="{{ job.id }}"><span>Read More</span></button>
+                                        <button id="modalBtn" class="btn btn-primary" data-jobId="{{ job.id }}"><span>Read More</span></button>
                                     </div>
                                 </div>
                             </div>
@@ -139,7 +140,7 @@
     
                             <label class="form-group">
                                 <div class="button-container">
-                                    <button type="submit" class="btn" value="Send Your Message"><p class="submit-btn-span">Send Your Message</p></button>
+                                    <button type="submit" class="btn btn-primary" value="Send Your Message"><p class="submit-btn-span">Send Your Message</p></button>
                                 </div>
                                 
                             </label>
