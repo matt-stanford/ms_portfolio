@@ -49,6 +49,10 @@ h2 {
     .modal-content {
         margin: 10% auto;
     }
+
+    .btn-outline {
+        margin-left: 30px;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -63,6 +67,10 @@ h2 {
         max-width: 1240px;
         padding: 0 3rem;
     }
+}
+
+section {
+    padding: 0 27.5px;
 }
 
 .container {
@@ -355,12 +363,13 @@ h2 {
 .button-container {
     position: relative;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 }
 
 .btn {
     position: relative;
-    display: inline-block;
     padding: 1.1rem 3rem;
     margin-top: 1rem;
     text-decoration: none;
@@ -375,6 +384,7 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 62px;
 }
 
 .btn-primary {
@@ -384,7 +394,6 @@ h2 {
 }
 
 .btn-outline {
-    margin-left: 2rem;
     background-color: transparent;
     color: #fff;
     border: 3px solid var(--secondary-color);
@@ -565,7 +574,7 @@ h2 {
     list-style: none;
     color: #fff;
     font-family: Oswald, sans-serif;
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 400;
     text-transform: uppercase;
     padding: 1rem;
@@ -699,7 +708,7 @@ h2 {
 }
 
 .form-wrapper {
-    max-width: 95%;
+    max-width: 100%;
     width: 540px;
     margin: auto;
     padding: 5%;
