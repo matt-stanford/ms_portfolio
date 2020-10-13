@@ -1,45 +1,9 @@
+{% extends 'base.html' %}
+
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/0193bc8668.js" crossorigin="anonymous"></script>
-    <title>Matt Stanford | Developer</title>
-    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
-</head>
-<body>
-    <div class="body-container">
-        <div class="menu-wrap">
-            <input type="checkbox" class="toggler">
-            <div class="hamburger"><div></div></div>
-            <div class="menu">
-                <div>
-                    <div>
-                        <div class="pages-menu">
-                            <ul>
-                                <li><a id="menuBtn" href="#home">Home</a></li>
-                                <li><a id="menuBtn" href="#portfolio">Portfolio</a></li>
-                                <li><a id="menuBtn" href="#about">About</a></li>
-                                <li><a id="menuBtn" href="#contact">Contact</a></li>
-                            </ul>
-                        </div>
-                        
-                        <div class="social-menu">
-                            <ul class="social-list">
-                                <li><a id="menuBtn" href="https://www.linkedin.com/in/matt-stanford/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a></li>
-                                <li><a id="menuBtn" href="https://github.com/matt-stanford" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a></li>
-                                <li><a id="menuBtn" href="mailto:mjfstanford@gmail.com" target="_blank" rel="noopener noreferrer"><i class="far fa-envelope"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
+{% block content %}
+
         <!-- home -->
         
         <section class="showcase" id="home">
@@ -72,9 +36,13 @@
                             <div class="card">
                                 <img src="{{ job.image.url }}" alt="">
                                 <div class="info">
-                                    <h3>{{ job.title }}</h3>
-                                    <p>{{ job.short_summary }}</p>
-                                    <button id="modalBtn" class="btn" data-jobId="{{ job.id }}"><span>Read More</span></button>
+                                    <div>
+                                        <h3>{{ job.title }}</h3>
+                                        <p>{{ job.short_summary }}</p>
+                                    </div>
+                                    <div>
+                                        <button id="modalBtn" class="btn" data-jobId="{{ job.id }}"><span>Read More</span></button>
+                                    </div>
                                 </div>
                             </div>
 
@@ -183,7 +151,4 @@
         </section>
     </div>
     
-    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
-    <script src="{% static 'js/app.js' %}"></script>
-</body>
-</html>
+{% endblock %}

@@ -19,3 +19,18 @@ class Job(models.Model):
 
     objects = models.Manager()
 
+class Course(models.Model):
+    title = models.CharField(max_length=255)
+    image = models.ImageField(upload_to='images/')
+    summary = models.TextField()
+    url = models.URLField(blank=True)
+    upload_date = models.DateTimeField(default=datetime.now)
+
+    @property
+    def short_summary(self):
+        return f'{self.summary[:100]}...'
+
+    def __str__(self):
+        return self.title
+
+    objects = models.Manager()

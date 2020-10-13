@@ -31,6 +31,10 @@ h2 {
     color: #fff;
 }
 
+.white-text {
+    color: #fff;
+}
+
 @media (min-width: 576px) {
     .container {
         padding: 0 1rem;
@@ -80,16 +84,15 @@ h2 {
 }
 
 .card {
-    width: 280px;
+    width: 320px;
     height: 360px;
     padding: 2rem 1rem;
     margin: 10px;
     background: #fff;
     position: relative;
-    display: flex;
-    align-items: flex-end;
-    box-shadow: 0px 7px 10px rgba(0,0,0,0.5);
+    box-shadow: 0px 7px 10px rgba(0,0,0,0.3);
     transition: all 0.5s ease;
+    border: 5px solid #f8f8f8;
 }
 
 .card:hover {
@@ -140,6 +143,10 @@ h2 {
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
 .card:hover .info {
@@ -179,8 +186,13 @@ h2 {
     position: relative;
     background: #f8f8f8;
     box-shadow: 0px 7px 10px rgba(0,0,0,0.5);
+    border: 5px solid #f8f8f8;
     animation-name: modalopen;
     animation-duration: 0.8s;
+}
+
+.courses-modal-content {
+    max-width: 1400px;
 }
 
 .modal-content > * {
@@ -206,7 +218,7 @@ h2 {
 }
 
 .modal-info p {
-    border-bottom: 1px solid var(--light-grey);
+    /* border-bottom: 1px solid var(--light-grey); */
     padding: 7px 0px;
 }
 
@@ -220,7 +232,9 @@ h2 {
 }
 
 .project-details {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--light-grey);
+    padding-bottom: 15px;
 }
 
 .closeBtn {
@@ -736,4 +750,11 @@ textarea {
 
 textarea + span + .border {
     top: 113px !important;
+}
+
+/* COURSES */
+
+.courses {
+    background-image: linear-gradient(45deg, #6c33f7, #f7297f);
+    min-height: 100vh;
 }
